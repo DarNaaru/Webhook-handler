@@ -1,0 +1,14 @@
+[Unit]
+Description=Ngrok HTTP Tunnel
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/ngrok http 5555
+WorkingDirectory=/home/ansible
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=ansible
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn instance to serve Flask webhook
+After=network.target
+
+[Service]
+User=ansible
+Group=www-data
+WorkingDirectory=/home/ansible/webhook
+Environment="PATH=/home/ansible/myenv/bin"
+ExecStart=/home/ansible/myenv/bin/python /home/ansible/webhook/webhook.py  
+
+[Install]
+WantedBy=multi-user.target
+
