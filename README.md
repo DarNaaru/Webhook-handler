@@ -125,8 +125,8 @@ sudo systemctl enable webhook.service
 # Проверка статуса
 sudo systemctl status webhook.service
 ```
-![webhook-service](https://github.com/user-attachments/assets/e3b30621-87c8-4d64-b23f-29a89e9c1a9e)
 
+![webhook-service](https://github.com/user-attachments/assets/31e426cb-05ab-4510-bb16-d85f2ec923cf)
 
 ### 7. Установка и настройка ngrok
 
@@ -176,7 +176,7 @@ sudo systemctl enable ngrok
 sudo systemctl status ngrok.service
 ```
 
-![ngrok](https://github.com/user-attachments/assets/e99568d7-a1af-4f5e-8f69-7f49b81dace5)
+![ngrok](https://github.com/user-attachments/assets/d7d6ed90-d816-488d-a5be-045b79b0cc27)
 
 
 **Примечание**: После выполнения `sudo systemctl enable ngrok` вы увидите сообщение:
@@ -195,7 +195,7 @@ curl http://localhost:4040/api/tunnels
 ```
 Этот запрос вернет JSON с информацией о всех активных туннелях, включая публичные URL, его нужно будет скопировать, зайти в файл Curl.py и вставить в переменную WEBHOOK_URL
 
-![piblic_url](https://github.com/user-attachments/assets/d283241a-a40c-43fe-a917-09797145c153)
+![piblic_url](https://github.com/user-attachments/assets/052aad82-ab6c-4583-af01-97b22bb1522f)
 
 ```python
 WEBHOOK_URL = 'https://your-ngrok-url.ngrok-free.app/webhooks'
@@ -203,13 +203,14 @@ WEBHOOK_URL = 'https://your-ngrok-url.ngrok-free.app/webhooks'
 После идём в Wrike -> Приложения и интеграция -> API -> + Приложение (создаём приложение). Название приложение можете написать любое. Далее находим строку 
 (URL-адреса переадресации *) и вставляем туда публичный url из ngrok. Ниже находим строку (Постоянный токен доступа) и нажимаем на кнопку "Получить токен" копируем этот токент и сохраняем. Это токен wrike API его нужно будет вставить в переменную ACCESS_TOKEN= в файле .env и в переменную ACCESS_TOKEN= в файле Curl.py После всех манипуляций запускаем Curl.py, чтобы создать webhook связь.
 
-![Wkike](https://github.com/user-attachments/assets/6ee5f5d0-9c3e-4b0e-b0cb-42b4821f177a)
+![Wkike](https://github.com/user-attachments/assets/52c79b84-7263-49df-8e47-5d37743b465c)
 
 2. Запустите скрипт для создания webhook:
 ```bash
 python3 Curl.py
 ```
-![curl](https://github.com/user-attachments/assets/bb727c41-7508-4086-82ba-84918ae61705)
+
+![curl](https://github.com/user-attachments/assets/3e90bf41-36c8-4ae6-b521-e8a13fde2962)
 
 Если видим сообщение Webhook created successfully значит туннель работает. Если нет, проверяем всё ли правильно сделали.
 
@@ -248,11 +249,11 @@ python3 Curl.py
 
 - **`/admin/wrike_ping`** - Тестовый запрос к Wrike API (проверка доступности и токена)
 
-![Тестовая отправка сообщения в Telegram](https://github.com/user-attachments/assets/8e8607d3-8214-4d85-81dc-3d8d786767ec)
+![Тестовая отправка сообщения в Telegram](https://github.com/user-attachments/assets/2f872f74-7f59-43c2-a83a-4822df76859f)
 
 - **`/admin/wrike_ping`** - Тестовый запрос к Wrike API (проверка доступности и токена)
 
-![Тестовый запрос к Wrike API](https://github.com/user-attachments/assets/277ef137-ebaa-486a-9461-7f7b7f13a6f3)
+![Тестовый запрос к Wrike API](https://github.com/user-attachments/assets/a032eed6-b507-40e5-8cfd-21058bfceb14)
 
 ## Мониторируемые события
 
@@ -425,8 +426,8 @@ admin_panel:
 Описание: Отключение сервера для технического обслуживания
 Ссылка на задачу: https://www.wrike.com/open.htm?id=123456789
 ```
-![Отключил](https://github.com/user-attachments/assets/8d1dbd73-146e-49a2-ba57-dee687426596)
 
+![Отключил](https://github.com/user-attachments/assets/c5a1f8b8-a6c2-4537-adee-023494a23649)
 
 ### Пример с комментарием
 
@@ -451,7 +452,8 @@ admin_panel:
 Дата: 2025-10-23 12:44:08
 Текст: ✅ Включил сервер
 ```
-![Включил](https://github.com/user-attachments/assets/1f9f93c6-ebf5-4cff-b28f-8a88705e87b9)
+
+![Включил](https://github.com/user-attachments/assets/bcb47dc1-d3ba-4a6d-960b-ef3f623acc04)
 
 
 ### Настройка для разных команд
