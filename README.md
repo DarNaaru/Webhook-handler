@@ -44,13 +44,13 @@ webhook-wrike/
 ### 1. Подготовка системы
 
 ```bash
-# Создание виртуального окружения
-python3 -m venv /home/user/myenv
-source /home/user/myenv/bin/activate
-
 # Создание директории проекта
 mkdir -p /home/user/project
 cd /home/user/project
+
+# Создание виртуального окружения
+python3 -m venv /home/user/myenv
+source /home/user/myenv/bin/activate
 ```
 
 ### 2. Установка зависимостей
